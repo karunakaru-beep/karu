@@ -279,6 +279,22 @@ nav a:hover {
   }
 }
 
+/* Stock Management Image Card */
+
+.stock-tile > :not(.project-image-button):not(dialog) {
+  display: none;
+}
+
+.stock-tile .project-image-button {
+  background-image:
+    linear-gradient(
+      0deg,
+      rgba(12, 35, 65, 0.9),
+      rgba(20, 64, 105, 0.15)
+    ),
+    url("https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1000&q=85");
+}
+
 </style>
 </head>
 
@@ -661,11 +677,30 @@ nav a:hover {
   </dialog>
 
 </div>
-
     
 <!-- UNDERGRADUATE ACADEMIC PROJECT -->
 
-<div class="project">
+<div class="project stock-tile">
+
+<button
+  type="button"
+  class="project-image-button"
+  onclick="document.getElementById('stockModal').showModal()"
+  aria-label="View Stock Management System Project">
+
+  <span class="project-image-title">
+    Stock Management System
+  </span>
+
+  <span class="project-image-subtitle">
+    Undergraduate Technical Project
+  </span>
+
+  <span class="project-image-plus" aria-hidden="true">
+    +
+  </span>
+
+</button>
 
   <h3>Stock Management System</h3>
 
