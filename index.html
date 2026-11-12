@@ -116,6 +116,77 @@ nav a:hover {
 
 </style>
   </style>
+  
+/* Internship Image Card */
+
+.internship-tile {
+  width: min(100%, 380px);
+  padding: 0;
+  overflow: visible;
+}
+
+/* Hide old visible text, but keep the popup */
+.internship-tile > :not(.project-image-button):not(dialog) {
+  display: none;
+}
+
+.project-image-button {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  color: white;
+  text-align: left;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+
+  background-image:
+    linear-gradient(
+      0deg,
+      rgba(12, 35, 65, 0.88),
+      rgba(20, 64, 105, 0.15)
+    ),
+    url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=85");
+
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.2s ease;
+}
+
+.project-image-button:hover {
+  transform: translateY(-3px);
+}
+
+.project-image-title {
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: bold;
+}
+
+.project-image-subtitle {
+  font-size: 13px;
+}
+
+.project-image-plus {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 34px;
+  font-weight: bold;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.project-image-button:hover .project-image-plus {
+  opacity: 1;
+}
+
 </head>
 
 <body>
@@ -182,7 +253,27 @@ nav a:hover {
 
   <h2>PMO & Project Support Skills</h2>
 
-  <div class="project">
+  <div class="project internship-tile">
+
+<button
+  type="button"
+  class="project-image-button"
+  onclick="document.getElementById('internshipModal').showModal()"
+  aria-label="View Policy Information Letter Improvement Project">
+
+  <span class="project-image-title">
+    Policy Information Letter Improvement
+  </span>
+
+  <span class="project-image-subtitle">
+    Project Management Internship
+  </span>
+
+  <span class="project-image-plus" aria-hidden="true">
+    +
+  </span>
+
+</button>
 
     <h3>Project Planning & Monitoring</h3>
     <p>
