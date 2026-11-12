@@ -246,6 +246,39 @@ nav a:hover {
     url("https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&w=1000&q=85");
 }
 
+/* Horizontal Project Cards */
+
+.selected-projects {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
+.selected-projects > h2 {
+  grid-column: 1 / -1;
+}
+
+.selected-projects > .project {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .selected-projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .selected-projects {
+    grid-template-columns: 1fr;
+  }
+}
+
 </style>
 </head>
 
@@ -356,10 +389,8 @@ nav a:hover {
      </div>
 </section>
 
-    <section>
+ <section class="selected-projects">
       <h2 id="projects">Selected Projects</h2>
-
-  
 
 <!-- PROJECT MANAGEMENT INTERNSHIP -->
 
