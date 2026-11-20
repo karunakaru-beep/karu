@@ -60,6 +60,13 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 22px;
+      grid-auto-rows: 270px;
+    }
+
+    .grid > .card {
+      height: 270px;
+      min-height: 0;
+      overflow-y: auto;
     }
 
     .card {
