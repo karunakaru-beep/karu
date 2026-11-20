@@ -70,6 +70,18 @@
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
+    .grid > details.card > summary {
+      list-style: none;
+    }
+
+    .grid > details.card > summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .grid > details.card > summary::marker {
+      content: "";
+    }
+
     .card:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 24px rgba(23, 55, 94, 0.08);
