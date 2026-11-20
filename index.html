@@ -158,7 +158,69 @@ nav a:hover {
 
 .skills-card h3:first-child {
   margin-top: 0;
-}</style>
+}
+.hero {
+  background: #18b99e;
+  color: #fff;
+  text-align: center;
+  min-height: 510px;
+  padding: 64px 7%;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.hero h1 {
+  color: #fff;
+  font-size: clamp(38px, 6.2vw, 86px);
+  line-height: 1.08;
+  letter-spacing: .015em;
+  text-transform: uppercase;
+  margin: 0 auto 24px;
+}
+.hero h1::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 5px;
+  margin: 24px auto 0;
+  border-radius: 99px;
+  background: #fff;
+}
+.hero h2 {
+  color: #fff;
+  margin: 0 auto 18px;
+  font-size: clamp(18px, 2.2vw, 25px);
+}
+.hero p {
+  color: #fff;
+  max-width: 1400px;
+  margin: 12px auto 26px;
+  font-size: clamp(17px, 1.55vw, 22px);
+}
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.hero-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #24476b;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+}
+@media (max-width: 600px) {
+  .hero { min-height: 480px; padding: 54px 24px; }
+}
+
+</style>
   
   <style>
     
@@ -404,10 +466,13 @@ header {
 
       <p>I am an operations and coordination professional with experience across India and the United Kingdom, currently building my career in Project Management and PMO. My background includes stakeholder communication, schedule coordination, process documentation and operational reporting. Through a simulated Project Management internship, I have developed practical skills in project planning, risk tracking, budget monitoring and project reporting, with a focus on IT Project Coordination and PMO opportunities.</p>
 
+<div class="hero-actions">
 <a href="KK%20PMO.pdf"
-   style="display:inline-block; margin-top:18px; padding:10px 24px; background:#24476b; color:white; text-decoration:none; border-radius:8px; font-weight:600;">
+   class="hero-button">
    Resume
 </a>
+        <a class="hero-button" href="#projects">Learn More</a>
+  </div>
 
 </section>
 
