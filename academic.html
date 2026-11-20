@@ -646,6 +646,12 @@
     const summary = card.querySelector(":scope > summary");
     const panel = document.createElement("div");
     panel.className = "card-details-panel";
+    const cardBackground = getComputedStyle(card);
+    panel.style.backgroundImage = cardBackground.backgroundImage;
+    panel.style.backgroundColor = cardBackground.backgroundColor;
+    panel.style.backgroundSize = cardBackground.backgroundSize;
+    panel.style.backgroundPosition = cardBackground.backgroundPosition;
+    panel.style.backgroundRepeat = cardBackground.backgroundRepeat;
 
     let content = summary.nextSibling;
     while (content) {
