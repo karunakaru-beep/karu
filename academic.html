@@ -64,9 +64,34 @@
     }
 
     .grid > .card {
+      position: relative;
       height: 270px;
       min-height: 0;
-      overflow-y: auto;
+      overflow: visible;
+    }
+
+    .grid > details.card[open] {
+      z-index: 10;
+    }
+
+    .grid > details.card > .card-details-panel {
+      display: none;
+      position: absolute;
+      top: calc(100% - 1px);
+      left: 0;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 18px 28px 26px;
+      background: rgba(255, 255, 255, 0.98);
+      color: #243247;
+      border: 1px solid #e5eaf0;
+      border-top: none;
+      border-radius: 0 0 14px 14px;
+      box-shadow: 0 8px 24px rgba(23, 55, 94, 0.16);
+    }
+
+    .grid > details.card[open] > .card-details-panel {
+      display: block;
     }
 
     .card {
@@ -618,6 +643,18 @@
 
 <script>
   document.querySelectorAll(".grid > details.card").forEach((card) => {
+    const summary = card.querySelector(":scope > summary");
+    const panel = document.createElement("div");
+    panel.className = "card-details-panel";
+
+    let content = summary.nextSibling;
+    while (content) {
+      const next = content.nextSibling;
+      panel.appendChild(content);
+      content = next;
+    }
+
+    card.appendChild(panel);
     card.addEventListener("mouseenter", () => {
       card.open = true;
     });
