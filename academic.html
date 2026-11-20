@@ -71,12 +71,14 @@
     }
 
     .grid > details.card[open] {
-      z-index: 10;
+      z-index: 100;
+      isolation: isolate;
     }
 
     .grid > details.card > .card-details-panel {
       display: none;
       position: absolute;
+      z-index: 1;
       top: calc(100% - 1px);
       left: 0;
       width: 100%;
@@ -648,7 +650,8 @@
     panel.className = "card-details-panel";
     const cardBackground = getComputedStyle(card);
     panel.style.backgroundImage = cardBackground.backgroundImage;
-    panel.style.backgroundColor = cardBackground.backgroundColor;
+    const firstGradientColor = cardBackground.backgroundImage.match(/linear-gradient\([^,]+,\s*(#[0-9a-fA-F]{3,8}|rgba?\([^)]+\))/i);
+    panel.style.backgroundColor = firstGradientColor ? firstGradientColor[1] : cardBackground.backgroundColor;
     panel.style.backgroundSize = cardBackground.backgroundSize;
     panel.style.backgroundPosition = cardBackground.backgroundPosition;
     panel.style.backgroundRepeat = cardBackground.backgroundRepeat;
